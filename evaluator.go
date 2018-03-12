@@ -73,10 +73,26 @@ func evaluateSubtree(expr Expr, args map[string]interface{}) (Expr, error) {
 		switch kind {
 		case reflect.Int:
 			return &NumberLiteral{Val: float64(args[index].(int))}, nil
+		case reflect.Int8:
+			return &NumberLiteral{Val: float64(args[index].(int8))}, nil
+		case reflect.Int16:
+			return &NumberLiteral{Val: float64(args[index].(int16))}, nil
 		case reflect.Int32:
 			return &NumberLiteral{Val: float64(args[index].(int32))}, nil
 		case reflect.Int64:
 			return &NumberLiteral{Val: float64(args[index].(int64))}, nil
+
+		case reflect.Uint:
+			return &NumberLiteral{Val: float64(args[index].(uint))}, nil
+		case reflect.Uint8:
+			return &NumberLiteral{Val: float64(args[index].(uint8))}, nil
+		case reflect.Uint16:
+			return &NumberLiteral{Val: float64(args[index].(uint16))}, nil
+		case reflect.Uint32:
+			return &NumberLiteral{Val: float64(args[index].(uint32))}, nil
+		case reflect.Uint64:
+			return &NumberLiteral{Val: float64(args[index].(uint64))}, nil
+
 		case reflect.Float32:
 			return &NumberLiteral{Val: float64(args[index].(float32))}, nil
 		case reflect.Float64:
